@@ -1,108 +1,210 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>THPT Cam Lộ</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-    header {
-      background-color: #0056b3;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    nav {
-      background-color: #004494;
-      padding: 10px 0;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    section {
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    h1, h2 {
-      color: #004494;
-    }
-    footer {
-      background-color: #0056b3;
-      color: white;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 30px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>THPT Cam Lộ</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin:0; padding:0;
+    background: #f8f9fa;
+  }
+  header {
+    background: #0055a5;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+  }
+  header img {
+    height: 60px;
+  }
+  header .info {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  nav {
+    background: #0055a5;
+  }
+  nav ul {
+    margin: 0; padding: 0;
+    list-style: none;
+    display: flex;
+  }
+  nav ul li {
+    position: relative;
+  }
+  nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    font-weight: bold;
+  }
+  nav ul li:hover {
+    background: #003d75;
+  }
+  nav ul li ul.dropdown {
+    position: absolute;
+    background: #003d75;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    display: none;
+    z-index: 10;
+  }
+  nav ul li:hover ul.dropdown {
+    display: block;
+  }
+  nav ul li ul.dropdown li a {
+    padding: 10px 15px;
+    font-weight: normal;
+  }
+  nav ul li ul.dropdown li a:hover {
+    background: #002954;
+  }
+
+  .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+  }
+  main {
+    flex: 3;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  aside {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: #0055a5;
+    border-bottom: 2px solid #0055a5;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  article.news-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  article.news-item:last-child {
+    border-bottom: none;
+  }
+  article.news-item h3 {
+    margin: 0 0 5px 0;
+  }
+  article.news-item p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+  }
+  article.news-item time {
+    font-size: 12px;
+    color: #999;
+  }
+
+  /* Slider placeholder */
+  .slider {
+    width: 100%;
+    height: 150px;
+    background: #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+    font-size: 20px;
+  }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Trường THPT Cam Lộ</h1>
-  <p>Chất lượng - Đổi mới - Phát triển</p>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Coat_of_arms_of_Quang_Tri_Province.svg" alt="Logo THPT Cam Lộ" />
+  <div class="info">
+    SỞ GIÁO DỤC VÀ ĐÀO TẠO QUẢNG TRỊ - TRƯỜNG THPT CAM LỘ
+  </div>
 </header>
 
 <nav>
-  <a href="#gioithieu">Giới thiệu</a>
-  <a href="#tuyensinh">Tuyển sinh</a>
-  <a href="#tintuc">Tin tức</a>
-  <a href="#lienhe">Liên hệ</a>
+  <ul>
+    <li><a href="#">GIỚI THIỆU</a></li>
+    <li><a href="#">CƠ CẤU TỔ CHỨC</a></li>
+    <li><a href="#">TIN TỨC</a></li>
+    <li><a href="#">KẾ HOẠCH</a></li>
+    <li><a href="#">HOẠT ĐỘNG</a></li>
+    <li><a href="#">VĂN PHÒNG</a></li>
+    <li><a href="#">VĂN BẢN</a></li>
+    <li>
+      <a href="#">TRA CỨU ▾</a>
+      <ul class="dropdown">
+        <li><a href="#">Bảng điểm</a></li>
+        <li><a href="#">Kết quả tuyển sinh</a></li>
+        <li><a href="#">Kết quả tốt nghiệp</a></li>
+      </ul>
+    </li>
+    <li><a href="#">LIÊN HỆ</a></li>
+    <li><a href="#">BÌNH ĐẲNG GIỚI</a></li>
+    <li><a href="#">CẢI CÁCH HÀNH CHÍNH</a></li>
+  </ul>
 </nav>
 
-<main>
-  <section id="gioithieu">
-    <h2>Giới thiệu</h2>
-    <p>Trường THPT Cam Lộ là một trong những trường trung học phổ thông hàng đầu tại tỉnh Quảng Trị, với đội ngũ giáo viên giàu kinh nghiệm và cơ sở vật chất hiện đại.</p>
-  </section>
+<div class="container">
+  <main>
+    <div class="slider">[Slider ảnh - có thể làm sau]</div>
 
-  <section id="tuyensinh">
-    <h2>Tuyển sinh</h2>
-    <p>Thông báo tuyển sinh năm học mới: Nhà trường tiếp nhận hồ sơ xét tuyển từ ngày 01/07 đến 31/07. Hồ sơ bao gồm: đơn đăng ký, học bạ, giấy khai sinh, và giấy khám sức khỏe.</p>
-  </section>
+    <article class="news-item">
+      <h3>Thông báo tuyển sinh lớp 10 năm học 2025_2026 (Đợt 2)</h3>
+      <time>Ngày đăng: 16/06/2025</time>
+      <p>Thông báo tuyển sinh lớp 10 năm học 2025_2026 (Đợt 2)</p>
+    </article>
 
-  <section id="tintuc">
-    <h2>Tin tức mới</h2>
+    <article class="news-item">
+      <h3>DANH SÁCH HỌC SINH TRÚNG TUYỂN VÀO LỚP 10 NĂM HỌC 2025_2026</h3>
+      <time>Ngày đăng: 16/06/2025</time>
+      <p>DANH SÁCH HỌC SINH TRÚNG TUYỂN VÀO LỚP 10 NĂM HỌC 2025_2026</p>
+    </article>
+
+    <article class="news-item">
+      <h3>Đại hội Đảng bộ Trường THPT Cam Lộ nhiệm kỳ 2025 - 2030</h3>
+      <time>Ngày đăng: 10/06/2025</time>
+      <p>Thông tin về đại hội Đảng bộ Trường THPT Cam Lộ nhiệm kỳ 2025 - 2030</p>
+    </article>
+
+    <article class="news-item">
+      <h3>HƯỚNG DẪN TUYỂN SINH ĐẠI HỌC, CAO ĐẲNG NĂM 2025</h3>
+      <time>Ngày đăng: 03/06/2025</time>
+      <p>Hướng dẫn tuyển sinh đại học, cao đẳng năm 2025</p>
+    </article>
+  </main>
+
+  <aside>
+    <h2>CHÍNH PHỦ ĐIỆN TỬ</h2>
     <ul>
-      <li>Ngày 15/06: Lễ bế giảng năm học 2024-2025.</li>
-      <li>Ngày 10/06: Hội thi văn nghệ chào mừng ngày Nhà giáo Việt Nam.</li>
-      <li>Ngày 05/06: Thông báo lịch thi học kỳ 2.</li>
+      <li>Hệ thống quản lý văn bản</li>
+      <li>Hệ thống email công vụ tỉnh</li>
+      <li>Hệ thống họp trực tuyến</li>
+      <li>Hệ thống quản lý trường học</li>
+      <li>Hệ thống thông tin quản lý giáo dục</li>
+      <li>Quản lý kiểm định chất lượng giáo dục</li>
+      <li>Hệ thống thông tin PCGD – CMC</li>
+      <li>Trường học kết nối</li>
+      <li>Hệ thống học tập trực tuyến</li>
     </ul>
-  </section>
-
-  <section id="lienhe">
-    <h2>Liên hệ</h2>
-    <p>Địa chỉ: Số 123, đường Nguyễn Huệ, Cam Lộ, Quảng Trị.</p>
-    <p>Điện thoại: 0233 1234 567</p>
-    <p>Email: info@camloquangtri.id.vn</p>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Trường THPT Cam Lộ - Bản quyền thuộc về trường THPT Cam Lộ
-</footer>
+  </aside>
+</div>
 
 </body>
 </html>
+
